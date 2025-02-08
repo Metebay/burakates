@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Burak Ateş | Her Şeyi Yapabilirsin!</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Arial', sans-serif;
+        }
+
+        body {
+            background: linear-gradient(135deg, #ff9966, #ff5e62);
+            color: #fff;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        header {
+            text-align: center;
+            padding: 50px 0;
+            animation: fadeIn 2s;
+        }
+
+        .daily-quote {
+            background: rgba(255,255,255,0.1);
+            padding: 20px;
+            border-radius: 10px;
+            margin: 20px 0;
+            text-align: center;
+            font-size: 1.2em;
+        }
+
+        .video-container {
+            position: relative;
+            padding-bottom: 56.25%;
+            height: 0;
+            overflow: hidden;
+            margin: 30px 0;
+            border-radius: 15px;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+        }
+
+        .video-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+
+        .nurettin-message {
+            background: rgba(0,0,0,0.3);
+            padding: 25px;
+            border-left: 5px solid #00ff88;
+            margin: 30px 0;
+            font-style: italic;
+        }
+
+        .motivational-section {
+            display: grid;
+            gap: 20px;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            margin: 40px 0;
+        }
+
+        .motivation-card {
+            background: rgba(255,255,255,0.1);
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+        }
+
+        @keyframes fadeIn {
+            from {opacity: 0;}
+            to {opacity: 1;}
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 10px;
+            }
+            
+            header h1 {
+                font-size: 1.8em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🚀 Burak Ateş, Yapabileceklerinin Sınırı Yok! 💪</h1>
+            <p>Her adımın seni başarıya biraz daha yaklaştırıyor!</p>
+        </header>
+
+        <div class="daily-quote" id="dailyQuote"></div>
+
+        <div class="video-container">
+            <iframe src="https://www.youtube.com/embed/VIDEO_ID" frameborder="0" allowfullscreen></iframe>
+        </div>
+
+        <div class="nurettin-message">
+            <h3>Can Dostun Nurettin Mete Bayındır Diyor Ki:</h3>
+            <p>"Burak'cığım, senin potansiyelinin farkındayım. O içindeki kıvılcımı ateşle ve kendini göster! Yanındayım, her zaman arkandayım. Başaracaksın!"</p>
+        </div>
+
+        <div class="motivational-section">
+            <div class="motivation-card">
+                <h2>📌 Bugünkü Hedefin</h2>
+                <p>Küçük bir adım at, mükemmel olmak zorunda değil!</p>
+            </div>
+            <div class="motivation-card">
+                <h2>💡 Hatırlatma</h2>
+                <p>Yapabileceğine inandığın sürece yarı yolda sayılmazsın!</p>
+            </div>
+            <div class="motivation-card">
+                <h2>🎯 İlerleme</h2>
+                <p>Her gün %1 gelişim, yılda 37 kat başarı demek!</p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Günlük Motivasyonel Sözler
+        const quotes = [
+            "Başlangıç her zaman en zor kısımdır. Sen çoktan başladın!",
+            "Hatalar değil, deneyim kazanıyorsun. Devam et!",
+            "Bir gün pişman olmaktansa şimdi zorlanmayı seç!",
+            "Yapabildiklerin hayal ettiklerinin kanıtıdır!",
+            "Sadece bugün için değil, gelecek senin için çabala!"
+        ];
+
+        function getDailyQuote() {
+            const today = new Date().getDate();
+            const quoteIndex = today % quotes.length;
+            document.getElementById('dailyQuote').textContent = quotes[quoteIndex];
+        }
+
+        // Sayfa yüklendiğinde çalıştır
+        window.onload = function() {
+            getDailyQuote();
+            // Video ID'sini URL'den almak için:
+            // const videoUrl = 'YOUTUBE_VIDEO_URL';
+            // const videoId = videoUrl.split('v=')[1];
+            // document.querySelector('iframe').src = `https://www.youtube.com/embed/${videoId}`;
+        };
+    </script>
+</body>
+</html>
