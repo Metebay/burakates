@@ -250,7 +250,7 @@
         // Canlı Yorum Sistemi
         const fetchLiveComment = async () => {
             try {
-                const response = await fetch('https://script.google.com/macros/s/AKfycbxbqGR60T3p_PF-LmRpYX0CS8bf2IDSkKzt9vVVJ2N3GnKzSUJ7axxxQ4YY7axokv2cWw/exec');
+                const response = await fetch('https://script.google.com/macros/s/AKfycbwNPyI-_CWqqFVXEf0gl12Vb0P5xNIMLFlrZ3BgoQKhvu7FfC1Mbb9o2w2A9pvFhb6YwA/exec');
                 const data = await response.json();
                 document.getElementById('liveCommentText').textContent = data.mesajlar[0].mesaj;
                 document.getElementById('commentTime').textContent = new Date(data.mesajlar[0].tarih).toLocaleDateString('tr-TR');
